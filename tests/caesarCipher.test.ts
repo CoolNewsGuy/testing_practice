@@ -1,3 +1,5 @@
+import { caesarCipher } from "../src/caesarCipher";
+
 describe("Caesar Cipher", () => {
     it("shifts LOWERCASE letters correctly", () => {
         const words = ["foo", "bar", "pizza", "superman"];
