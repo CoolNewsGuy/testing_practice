@@ -1,3 +1,5 @@
+import calculator from "../src/calculator";
+
 describe("Calculator", () => {
     it("Sums two numbers correctly", () => {
         expect(calculator.add(2, 3)).toBe(5);
