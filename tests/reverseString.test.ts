@@ -1,3 +1,5 @@
+import { reverseString } from "../src/reverseString";
+
 it("Reverse the string", () => {
     const words = ["foo", "BAR", "Foo BAr", "Pizza", "1234", "", " "];
     const results = ["oof", "RAB", "rAB ooF", "azziP", "4321", "", " "];
