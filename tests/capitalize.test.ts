@@ -1,3 +1,5 @@
+import { capitalize } from "../src/capitalize";
+
 it("Capitalizes the string", () => {
     const words = ["foo", "bAr", "pizza", "BaNANa"];
     const results = ["Foo", "BAr", "Pizza", "BaNANa"];
