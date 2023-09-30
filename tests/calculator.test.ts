@@ -10,9 +10,9 @@ describe("Calculator", () => {
     });
 
     it("Divides a number correctly", () => {
-        expect(calculator.divide(3 / 2)).toBeCloseTo(1.5);
-        expect(calculator.divide(-1 / 4)).toBeCloseTo(-0.25);
-        expect(calculator.divide(9 / 0)).toThrowError("Can't divide by 0");
+        expect(calculator.divide(3, 2)).toBeCloseTo(1.5);
+        expect(calculator.divide(-1, 4)).toBeCloseTo(-0.25);
+        expect(calculator.divide(9, 0)).toThrowError("Can't divide by 0");
     });
 
     it("Multiplies two numbers correctly", () => {
