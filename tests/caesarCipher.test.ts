@@ -32,4 +32,21 @@ describe("Caesar Cipher", () => {
             );
         }
     });
+
+    it("DOES NOT shift non-letters characters", () => {
+        const words = ["123", "#!?eC", "hello World!", "it's a-me mario :)!"];
+        const results = {
+            forShiftFactorOne: ["123", "#!?fD", "ifmmp Xpsme!", "ju't b-nf nbsjp :)!"],
+            forShiftFactorTwo: ["123", "#!?gE", "jgnnq Yqtnf!", "kv'u c-og octkq :)!"],
+        };
+
+        for (const i in words) {
+            expect(caesarCipher(words[i], 1)).toBe(
+                results.forShiftFactorOne[i]
+            );
+            expect(caesarCipher(words[i], 2)).toBe(
+                results.forShiftFactorTwo[i]
+            );
+        }
+    })
 });
