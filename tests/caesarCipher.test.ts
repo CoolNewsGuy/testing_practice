@@ -36,8 +36,18 @@ describe("Caesar Cipher", () => {
     it("DOES NOT shift non-letters characters", () => {
         const words = ["123", "#!?eC", "hello World!", "it's a-me mario :)!"];
         const results = {
-            forShiftFactorOne: ["123", "#!?fD", "ifmmp Xpsme!", "ju't b-nf nbsjp :)!"],
-            forShiftFactorTwo: ["123", "#!?gE", "jgnnq Yqtnf!", "kv'u c-og octkq :)!"],
+            forShiftFactorOne: [
+                "123",
+                "#!?fD",
+                "ifmmp Xpsme!",
+                "ju't b-nf nbsjp :)!",
+            ],
+            forShiftFactorTwo: [
+                "123",
+                "#!?gE",
+                "jgnnq Yqtnf!",
+                "kv'u c-og octkq :)!",
+            ],
         };
 
         for (const i in words) {
@@ -48,5 +58,30 @@ describe("Caesar Cipher", () => {
                 results.forShiftFactorTwo[i]
             );
         }
-    })
+    });
+
+    it("handles shift factor < 0 and > 25", () => {
+        const words = ["foo", "bar", "pizza", "superman"];
+        const results = {
+            forShiftFactorOne: ["gpp", "cbs", "qjaab", "tvqfsnbo"],
+            forShiftFactorTwo: ["hqq", "dct", "rkbbc", "uwrgtocp"],
+        };
+
+        for (const i in words) {
+            expect(caesarCipher(words[i], 26)).toBe(words[i]);
+            expect(caesarCipher(words[i], -26)).toBe(words[i]);
+            expect(caesarCipher(words[i], 27)).toBe(
+                results.forShiftFactorOne[i]
+            );
+            expect(caesarCipher(words[i], 28)).toBe(
+                results.forShiftFactorTwo[i]
+            );
+            expect(caesarCipher(words[i], -25)).toBe(
+                results.forShiftFactorOne[i]
+            );
+            expect(caesarCipher(words[i], -24)).toBe(
+                results.forShiftFactorTwo[i]
+            );
+        }
+    });
 });
