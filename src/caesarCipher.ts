@@ -1,0 +1,5 @@
+const LOWER_A_CHAR_CODE = 97;
+const LOWER_Z_CHAR_CODE = 122;
+
+const UPPER_A_CHAR_CODE = 65;
+const UPPER_Z_CHAR_CODE = 90;
