@@ -1,3 +1,5 @@
+import { analyzeArray } from "../src/analyzeArray";
+
 describe("Analyze Array", () => {
     it("sets properties other than length to null for an empty array", () => {
         expect(analyzeArray([])).toStrictEqual({
