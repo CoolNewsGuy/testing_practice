@@ -11,24 +11,26 @@ export function caesarCipher(str: string, shiftFactor: number): string {
 
     shiftFactor %= 26;
 
-    for (let i = 0; i < str.length; i++) {
-        const currentChar = str[i];
+    let newStr = str;
+
+    for (let i = 0; i < newStr.length; i++) {
+        const currentChar = newStr[i];
 
         if (isAlpha(currentChar)) {
-            let newCharCode: number = str.charCodeAt(i) + shiftFactor;
+            let newCharCode: number = newStr.charCodeAt(i) + shiftFactor;
 
             if (!isAlpha(String.fromCharCode(newCharCode))) {
                 newCharCode -= 26;
             }
 
-            str =
-                str.slice(0, i) +
+            newStr =
+                newStr.slice(0, i) +
                 String.fromCharCode(newCharCode) +
-                str.slice(i + 1);
+                newStr.slice(i + 1);
         }
     }
 
-    return str;
+    return newStr;
 }
 
 function isAlpha(char: string): boolean {
